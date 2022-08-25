@@ -64,11 +64,6 @@ class MiniGamesBot(Bot):
         self.scheduler.add(60, self.game_manager.close_inactive_sessions)
         self.scheduler.add(45, self.routine_updates)
 
-        # REMOVE THIS TRY EXCEPT
-        try:
-            self.add_cog(TopGG(self))
-        except Exception as e:
-            print(e)
 
     async def on_message(self, message):
         if message.author.bot or isinstance(message.channel, DMChannel):
